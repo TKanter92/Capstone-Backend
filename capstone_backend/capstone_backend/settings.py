@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'authentication.apps.AuthenticationConfig',
     'customers.apps.CustomersConfig',
     'cars.apps.CarsConfig',
+    'questionnaire.apps.QuestionnaireConfig',
 ]
 
 MIDDLEWARE = [
