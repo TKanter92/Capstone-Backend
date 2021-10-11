@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'customers.apps.CustomersConfig',
     'cars.apps.CarsConfig',
     'questionnaire.apps.QuestionnaireConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'capstone_backend.urls'
@@ -123,6 +125,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication', )
 }
 
+
+CORS_ORIGIN_ALLOW_ALL=True
 
 try:
     from capstone_backend.local_settings import *
