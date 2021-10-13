@@ -8,8 +8,15 @@ from .models import Questionnaire
 from .serializers import QuestionnaireSerializer
 from django.contrib.auth.models import User
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 @permission_classes([IsAuthenticated])
+def get_all_questionnaires(request):
+    questionnaires = Questionnaire.objects.all()
+    serializer = QuestionnaireSerializer(questionnaires, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST', 'GET'])
+@permission_classes([AllowAny])
 def user_style(request):
     if request.method == 'POST':
         serializer = QuestionnaireSerializer(data=request.data)

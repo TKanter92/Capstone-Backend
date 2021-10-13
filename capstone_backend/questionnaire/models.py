@@ -7,7 +7,7 @@ class Questionnaire(models.Model):
     textures = models.BooleanField(default=False)
     colors = models.CharField(max_length=20, default="none")
     molding = models.CharField(max_length=20, default="none")
-    wallpaper = models.BooleanField(max_length=20, default="none")
+    wallpaper = models.BooleanField(max_length=20, default=False)
     window_treatments = models.CharField(max_length=20, default="none")
     rugs = models.BooleanField(default=False)
     carpeting = models.BooleanField(default=False)
