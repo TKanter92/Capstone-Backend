@@ -16,7 +16,7 @@ def get_all_questionnaires(request):
     return Response(serializer.data)
 
 @api_view(['POST', 'GET'])
-@permission_classes([AllowAny])
+@permission_classes([IsAuthenticated])
 def user_style(request):
     if request.method == 'POST':
         serializer = QuestionnaireSerializer(data=request.data)
